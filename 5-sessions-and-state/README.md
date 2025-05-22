@@ -2,6 +2,12 @@
 
 This example demonstrates how to create and manage stateful sessions in the Agent Development Kit (ADK), enabling your agents to maintain context and remember user information across interactions.
 
+There are 3 ways:
+
+1. InMemory (save in memory, but lost on reload)
+2. Database (Save it in local computer but has persistance)
+3. VertexAI (Save it in Cloud)
+
 ## What Are Sessions in ADK?
 
 Sessions in ADK provide a way to:
@@ -39,6 +45,7 @@ The example uses a simple question-answering agent that responds based on stored
 ### Setup
 
 1. Activate the virtual environment from the root directory:
+
 ```bash
 # macOS/Linux:
 source ../.venv/bin/activate
@@ -49,6 +56,7 @@ source ../.venv/bin/activate
 ```
 
 2. Create a `.env` file and add your Google API key:
+
 ```
 GOOGLE_API_KEY=your_api_key_here
 ```
@@ -62,6 +70,7 @@ python basic_stateful_session.py
 ```
 
 This will:
+
 1. Create a new session with user information
 2. Initialize the agent with access to that session
 3. Process a user query about the stored preferences
@@ -115,9 +124,9 @@ instruction="""
 You are a helpful assistant that answers questions about the user's preferences.
 
 Here is some information about the user:
-Name: 
+Name:
 {user_name}
-Preferences: 
+Preferences:
 {user_preferences}
 """
 ```
